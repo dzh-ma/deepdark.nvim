@@ -8,7 +8,7 @@ local function highlight(group, styles)
     vim.api.nvim_command('highlight! '..group..' '..gui..' '..sp..' '..fg..' '..bg)
 end
 
-local b0 = "#1e2127"
+local b0 = "#1a1918"
 local b1 = "#595855"
 local b2 = "#807E79"
 local b3 = "#999791"
