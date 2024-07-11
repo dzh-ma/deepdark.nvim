@@ -16,9 +16,9 @@ local b4 = "#B3B1AD"
 local b5 = "#cccbc6"
 local b6 = "#E6E4DF"
 local b7 = "#faf2eb"
-local light_blue = "#d4d4fa"
+local light_blue = "#4169E1"
 local light_cyan = "#c8fafa"
-local light_green = "#299617"
+local light_green = "#338864"
 local light_orange = "#fae1c8"
 local light_pink = "#fad4ed"
 local light_purple = "#edd4fa"
@@ -34,50 +34,61 @@ local red = "#a60000"
 local yellow = "#f2f200"
 
 local editor_syntax = {
+    -- group 1
     Normal = { fg = b7, bg = b0 },
     NormalFloat = { fg = b7, bg = b0 },
     NonText = { fg = b3 },
+
     Cursor = { fg = b7, bg = b0 },
     CursorLine = { fg = b0, bg = b7 },
     CursorColumn = { bg = b6 },
     ColorColumn = { bg = light_yellow },
     LineNr = { fg = b3 },
     -- CursorLineNr = { fg = b7, bg = b0 },
+
     -- VertSplit = { fg = light_grey },
     -- Folded = { fg = grey, bg = light_grey },
     FoldColumn = { fg = b5 },
     SignColumn = { fg = b5 },
+
     StatusLine = { fg = b7, bg = b1 },
     StatusLineNC = { fg = b7, bg = b0 },
+
     TabLine = { fg = b7, bg = b0 },
     -- TabLineFill = { fg = grey, bg = light_grey },
     -- TabLineSel = { fg = black, bg = white },
+
     MatchParen = { fg = red, gui = "italic" },
     Visual = { bg = b2 },
+
     Search = { fg = b7, bg = light_yellow },
     IncSearch = { fg = b7, bg = light_yellow },
     CurSearch = { fg = b7, bg = light_yellow },
+
     Pmenu = { fg = b7, bg = b0 },
     PmenuSel = { fg = b7, bg = b0 },
     PmenuSbar = { bg = b7 },
     PmenuThumb = { bg = b7 },
+
     WildMenu = { bg = b4 },
     Question = { fg = b7, gui = "bold" },
+
     WarningMsg = { fg = b0, bg = orange },
     ErrorMsg = { fg = b0, bg = red },
+
     SpecialKey = { fg = blue },
     Title = { fg = b7, gui = "bold" },
-    Directory = { fg = blue },
+    Directory = { fg = light_blue },
 }
 
 local code_syntax = {
-    Comment = { fg = b3, gui = "italic" },
-    Constant = { fg = b0, bg = blue },
-    String = { fg = b0, bg = light_green },
-    Character = { fg = b0, bg = blue },
-    Number = { fg = b0, bg = blue },
-    Boolean = { fg = b0, bg = blue },
-    Float = { fg = b0, bg = blue },
+    Comment = { fg = b2, gui = "italic" },
+    Constant = { fg = cyan },
+    String = { fg = b7, bg = light_green },
+    Character = { fg = cyan },
+    Number = { fg = cyan },
+    Boolean = { fg = cyan },
+    Float = { fg = cyan },
     Identifier = { fg = b7 },
     Function = { fg = b7 },
     Statement = { fg = b0, bg = orange },
@@ -87,7 +98,7 @@ local code_syntax = {
     Operator = { fg = b7 },
     Keyword = { fg = b0, bg = orange },
     Exception = { fg = b0, bg = orange },
-    PreProc = { fg = b0, gui = "bold" },
+    PreProc = { fg = b7, gui = "bold" },
     Include = { fg = b0, gui = "bold" },
     Define = { fg = b0, gui = "bold" },
     Macro = { fg = b0, gui = "bold" },
@@ -110,15 +121,15 @@ local code_syntax = {
 
 local plugin_syntax = {
     -- TreeSitter
-    ["@variable"] = { fg = b5 },
+    ["@variable"] = { fg = b4 },
     ["@function"] = { fg = b7 },
     ["@function.builtin"] = { fg = cyan },
     ["@function.call"] = { fg = cyan },
     ["@function.macro"] = { fg = b7, gui = "bold" },
-    ["@keyword"] = { fg = b0, bg = orange },
+    ["@keyword"] = { fg = orange },
     ["@keyword.function"] = { fg = b0, bg = purple },
     ["@keyword.operator"] = { fg = b7 },
-    ["@keyword.return"] = { fg = b0, bg = orange },
+    ["@keyword.return"] = { fg = orange },
     ["@conditional"] = { fg = b0, bg = orange },
     ["@repeat"] = { fg = b0, bg = orange },
     ["@label"] = { fg = b0, bg = orange },
@@ -127,12 +138,12 @@ local plugin_syntax = {
     ["@constant"] = { fg = b0, bg = blue },
     ["@constant.builtin"] = { fg = pink },
     ["@constant.macro"] = { fg = b7, gui = "bold" },
-    ["@string"] = { fg = b0, bg = light_green },
+    ["@string"] = { fg = b6, bg = light_green },
     ["@string.escape"] = { fg = red },
-    ["@character"] = { fg = b0, blue },
-    ["@number"] = { fg = b0, blue },
-    ["@boolean"] = { fg = b0, blue },
-    ["@float"] = { fg = b0, blue },
+    ["@character"] = { fg = cyan },
+    ["@number"] = { fg = cyan },
+    ["@boolean"] = { fg = cyan },
+    ["@float"] = { fg = cyan },
     ["@type"] = { fg = pink },
     ["@type.builtin"] = { fg = pink },
     ["@attribute"] = { fg = b7, gui = "bold" },
