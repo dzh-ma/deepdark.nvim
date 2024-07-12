@@ -301,7 +301,7 @@ function M.setup()
     end
 
     vim.o.termguicolors = true
-    vim.g.colors_name = "deepblack"
+    vim.g.colors_name = "deepdark"
 
     local colors = get_colors()
     local groups = M.get_groups(colors)

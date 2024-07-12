@@ -4,6 +4,6 @@ if vim.fn.exists("syntax_on") then
 end
 
 vim.o.termguicolors = true
-vim.g.colors_name = "deepblack"
+vim.g.colors_name = "deepdark"
 
-require("deepblack").setup()
+require("deepdark").setup()

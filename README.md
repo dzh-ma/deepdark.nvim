@@ -1,4 +1,4 @@
-# deepblack.nvim
+# deepdark.nvim
 
 **This plugin is a work in progress.**
 
