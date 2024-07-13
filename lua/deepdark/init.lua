@@ -2,6 +2,7 @@ local M = {}
 
 local function get_colors()
     return {
+        base = "NONE",
         base0 = "#FFFFFF", -- Pure white for maximum contrast
         base1 = "#E0E0E0", -- Very light gray
         base2 = "#BDBDBD", -- Light gray
@@ -10,25 +11,25 @@ local function get_colors()
         base5 = "#424242", -- Very dark gray
         base6 = "#212121", -- Almost black
         base7 = "#000000", -- Pure black for OLED
-
         light_orange = "#4D3319", -- Darker vibrant orange
         light_yellow = "#4D4D19", -- Darker vibrant yellow
         light_cyan = "#194D4D", -- Darker vibrant cyan
         light_green = "#194D19", -- Darker vibrant green
         light_blue = "#19194D", -- Darker vibrant blue
-        --light_purple = "#4D194D", -- Darker vibrant purple
-        light_purple = "#4B0082",
+        light_purple = "#4D194D", -- Darker vibrant purple
+        -- light_purple = "#4B0082",
         light_pink = "#4D1933", -- Darker vibrant pink
-        light_red = "#4D1919", -- Darker vibrant red
+        light_red = "#570F14", -- Darker vibrant red
 
         orange = "#FF8C00", -- Vibrant dark orange
         yellow = "#FFD700", -- Vibrant gold
         cyan = "#00FFFF", -- Vibrant cyan
         green = "#00FF00", -- Vibrant green
         blue = "#1E90FF", -- Vibrant dodger blue
-        purple = "#9932CC", -- Vibrant dark orchid
+        --purple = "#9932CC", -- Vibrant dark orchid
+        purple = "#C71585", -- Vibrant dark orchid
         pink = "#FF69B4", -- Vibrant hot pink
-        red = "#FF4500", -- Vibrant orange-red
+        red = "#DC143C", -- Vibrant orange-red
     }
 end
 
@@ -91,13 +92,13 @@ function M.get_groups(c)
         ErrorMsg = { fg = c.red, bold = true },
         WarningMsg = { fg = c.yellow, bold = true },
 
-        DiffAdd = { fg = c.green, bg = c.light_green },
-        DiffChange = { fg = c.orange, bg = c.light_orange },
+        DiffAdd = { fg = c.base0, bg = c.light_green },
+        DiffChange = { fg = c.base0, bg = c.light_orange },
         DiffDelete = { fg = c.red, bg = c.light_red },
-        DiffText = { fg = c.yellow, bg = c.light_yellow, bold = true },
+        DiffText = { fg = c.base0, bg = c.light_yellow, bold = true },
 
         Comment = { fg = c.base5, italic = true },
-        Constant = { fg = c.orange, bg = c.light_orange },
+        Constant = { fg = c.base0, bg = c.light_orange },
         String = { fg = c.green },
         Character = { fg = c.green },
         Number = { fg = c.orange },
@@ -112,16 +113,16 @@ function M.get_groups(c)
         Repeat = { fg = c.purple },
         Label = { fg = c.purple },
         Operator = { fg = c.cyan },
-        Keyword = { fg = c.red, bg = c.light_red },
+        Keyword = { fg = c.base0, bg = c.light_red },
         Exception = { fg = c.red },
 
-        PreProc = { fg = c.cyan },
+        PreProc = { fg = c.cyan, bold = true },
         Include = { fg = c.blue },
         Define = { fg = c.purple },
-        Macro = { fg = c.light_purple, bg = c.purple },
+        Macro = { fg = c.base0, bg = c.light_purple },
         PreCondit = { fg = c.yellow },
 
-        Type = { fg = c.yellow, bg = c.light_yellow },
+        Type = { fg = c.red },
         StorageClass = { fg = c.orange },
         Structure = { fg = c.purple },
         Typedef = { fg = c.yellow },
@@ -290,7 +291,27 @@ function M.get_groups(c)
         ["@lsp.typemod.variable.defaultLibrary"] = { link = "@variable.builtin" },
         ["@lsp.typemod.variable.injected"] = { link = "@variable" },
 
-        -- Plugin-specific highlight groups can be added here
+        -- Neorg
+        ['@neorg.headings.1.prefix.norg'] = { fg = c.cyan, bg = c.light_cyan },
+        ['@neorg.headings.1.title.norg'] = { fg = c.cyan, bg = c.light_cyan },
+        ['@neorg.headings.2.prefix.norg'] = { fg = c.purple, bg = c.light_purple },
+        ['@neorg.headings.2.title.norg'] = { fg = c.purple, bg = c.light_purple },
+        ['@neorg.headings.3.prefix.norg'] = { fg = c.orange, bg = c.light_orange },
+        ['@neorg.headings.3.title.norg'] = { fg = c.orange, bg = c.light_orange },
+        ['@neorg.headings.4.prefix.norg'] = { fg = c.green, bg = c.light_green },
+        ['@neorg.headings.4.title.norg'] = { fg = c.green, bg = c.light_green },
+        ['@neorg.headings.5.prefix.norg'] = { fg = c.pink, bg = c.light_pink },
+        ['@neorg.headings.5.title.norg'] = { fg = c.pink, bg = c.light_pink },
+        ['@neorg.headings.6.prefix.norg'] = { fg = c.blue, bg = c.light_blue },
+        ['@neorg.headings.6.title.norg'] = { fg = c.blue, bg = c.light_blue },
+        ['@neorg.markup.verbatim.norg'] = { fg = c.orange, bg = c.base5 },
+        ['@neorg.lists.unordered.prefix.norg'] = { fg = c.cyan, bg = c.light_cyan },
+        ['@neorg.lists.ordered.prefix.norg'] = { fg = c.cyan, bg = c.light_cyan },
+        ['@neorg.markup.bold.norg'] = { fg = c.orange, bold = true },
+        ['@neorg.markup.italic.norg'] = { fg = c.yellow, italic = true },
+        ['@neorg.markup.superscript.norg'] = { fg = c.green, bg = c.light_green },
+        ['@neorg.markup.subscript.norg'] = { fg = c.red, bg = c.light_red },
+        ['@neorg.markup.inline_math.norg'] = { fg = c.red },
     }
 end
 
